@@ -12,38 +12,35 @@ public class Acrisio extends AdvancedRobot {
 
 
 		while (true) {
-			ahead(169);
-			back(90);
+				ahead(150);
 			turnLeft(45);
-			turnGunRight(178);
+			turnGunRight(180);
 			
 		}
 		
 }
 
 public void onScannedRobot(ScannedRobotEvent e) {
-         fire(3);
+      
 		System.out.println(this.getName() + " - " + e.getDistance());
-		turnLeft(45);
-		if (e.getDistance() < 500) {
+		if (e.getDistance() < 200) {
 			fire(3);
 		} else {
 			fire(2);
 			back(60);
 		}
 	}
-
-
-	public void onHitWall1(HitWallEvent event) {
-		back(80);
-		ahead(30);
-		turnLeft(35);
-		
-	}
+	
+public void onHitWall1(HitWallEvent event) {
+back(200);
+}
+	
 public void onHitRobot(HitRobotEvent evento){
-fire(1);
+turnRight(20);
+fire(3);
 back(30);
-ahead(50);
+execute();
+
 }
 
 	
